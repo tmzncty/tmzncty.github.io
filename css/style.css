@@ -82,18 +82,15 @@ http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
 
 /* =Reset
 -------------------------------------------------------------- */
-/* 引入阿里妈妈东方大楷字体 */
 @font-face {
-    font-family: "阿里妈妈东方大楷 Regular";
-    font-weight: 1000;
-    src: url("font/阿里妈妈东方大楷/AlimamaDongFangDaKai-Regular.woff2") format("woff2"),
-         url("font/阿里妈妈东方大楷/AlimamaDongFangDaKai-Regular.woff") format("woff");
+    font-family: "NotoSerifSC-Medium";
+    src: url('font/NotoSerifSC-Medium.woff2') format('woff2'); /* 更新文件路径和格式 */
     font-display: swap;
 }
 
 /* 应用字体到全局元素 */
 * {
-    font-family: "阿里妈妈东方大楷 Regular", "Microsoft YaHei", sans-serif;
+    font-family: "NotoSerifSC-Medium", "Microsoft YaHei", sans-serif;
     margin: 0;
     padding: 0;
     border: 0;
@@ -114,7 +111,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, menu, 
 nav, output, ruby, section, summary, time, mark, audio, video {
-    font-family: "阿里妈妈东方大楷 Regular", "Microsoft YaHei", sans-serif;
+    font-family: "LXGW WenKai Screen", "Microsoft YaHei", sans-serif;
 }
 
 

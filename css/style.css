@@ -82,16 +82,42 @@ http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
 
 /* =Reset
 -------------------------------------------------------------- */
+/* 引入阿里妈妈东方大楷字体 */
+@font-face {
+    font-family: "阿里妈妈东方大楷 Regular";
+    font-weight: 900;
+    src: url("font/阿里妈妈东方大楷/AlimamaDongFangDaKai-Regular.woff2") format("woff2"),
+         url("font/阿里妈妈东方大楷/AlimamaDongFangDaKai-Regular.woff") format("woff");
+    font-display: swap;
+}
+
+/* 应用字体到全局元素 */
 * {
-    font-family: Microsoft YaHei;
+    font-family: "阿里妈妈东方大楷 Regular", "Microsoft YaHei", sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline; 
 }
-Microsoft YaHei,html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	vertical-align: baseline; 
+
+/* 应用字体到特定元素 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, menu, 
+nav, output, ruby, section, summary, time, mark, audio, video {
+    font-family: "阿里妈妈东方大楷 Regular", "Microsoft YaHei", sans-serif;
 }
+
+
 body {
 	line-height: 1;
 }

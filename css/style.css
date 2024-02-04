@@ -23,7 +23,7 @@ Main Title:
   Normal: 0, 0, 0 *
   Hover: 81, 165, 168 (Lake Green)
 All Fonts: Microsoft-YaHei
-Article Title:
+Article.entry-content a, .comment-content a Title:
   Normal: 81, 165, 168
   Hover: 0, 0, 0
 Widget Title: 81, 165, 168
@@ -223,7 +223,7 @@ img {
 	line-height: 2.181818182;
 	font-weight: bold;
 	text-transform: uppercase;
-	color: rgb(81, 165, 168); /* Widget Title */
+	color: rgba(219, 46, 255,0.8); /* Widget Title */
 }
 
 /* Shared Post Format styling */
@@ -578,7 +578,7 @@ body.custom-font-enabled {
 }
 a {
 	outline: none;
-	color: rgb(81, 165, 168); /*Article Title Normal*/
+	color: rgba(219, 46, 255,0.8); /*Article Title Normal*/
     text-decoration: none;
 }
 a:hover {
@@ -589,25 +589,25 @@ a:hover {
 
 /* Backgroud image */
 #bg {
-  background-image: url("images/body.jpg");
-  background-color: #050a10;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: -1;
-}
+	background: linear-gradient(rgba(171, 171, 171, 0.402), rgba(171, 171, 171, 0.4)), url("images/body.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	left: 0;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: -1;
+  }
+  
+  
+  
 
 /* Achive */
 .archive-year-wrap {
-    color: rgb(81, 165, 168);
+    color: rgba(219, 46, 255,0.8);
     font-weight: normal;
     margin-bottom: 30px;
     text-shadow: 0 0 1px #fff;
@@ -664,13 +664,13 @@ a:hover {
 
 .site-header h1 a,
 .site-header h2 a {
-	color: #515151;
+	color: #962b2b;
 	display: inline-block;
 	text-decoration: none;
 }
 .site-header h1 a:hover,
 .site-header h2 a:hover {
-	color: rgb(81, 156, 158); /* Main Title Hover */
+	color: rgb(31, 60, 255); /* Main Title Hover */
 }
 .site-header h1 {
 	font-size: 24px;
@@ -684,7 +684,7 @@ a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #530f0f;
 }
 .header-image {
 	margin-top: 24px;
@@ -762,7 +762,7 @@ section[role="banner"] {
 	color: rgb(0, 0, 0); /* Widget Link Normal*/
 }
 .widget-area .widget a:hover {
-	color: rgb(81, 165, 168); /* Widget Link Hover*/
+	color: rgba(219, 46, 255,0.8); /* Widget Link Hover*/
 }
 
 }
@@ -850,15 +850,15 @@ footer[role="contentinfo"] a:hover {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575;
+	color: #353535;
 }
 .comments-link a,
 .entry-meta a {
-	color: rgb(88, 88, 88); /*Article Meta Link Normal*/
+	color: rgba(0, 0, 0, 0.6); /*Article Meta Link Normal*/
 }
 .comments-link a:hover,
 .entry-meta a:hover {
-	color: rgb(81, 165, 168); /*Article Meta Link Hover*/
+	color: rgba(219, 46, 255,0.8); /*Article Meta Link Hover*/
 }
 
 article.sticky .featured-post {
@@ -942,7 +942,7 @@ article.sticky .featured-post {
 
 .entry-content a,
 .comment-content a {
-	color: rgb(81, 165, 168); /* Link in Article Content Normal */
+	color: rgba(219, 46, 255,0.8); /* Link in Article Content Normal */
 }
 
 .entry-content a:Hover,
@@ -1131,7 +1131,7 @@ footer.entry-meta {
 	font-size: 13px;
 	font-size: 0.928571429rem;
 	line-height: 1.846153846;
-	color: #757575; /* Article Meta */
+	color: #000000; /* Article Meta */
 }
 .single-author .entry-meta .by-author {
 	display: none;
@@ -1143,7 +1143,7 @@ footer.entry-meta {
 
 /* Hexo Code */
 figure.highlight {
-    border: 1px solid rgba(0, 0, 0, 0.24);
+    border: 1px solid rgba(0, 0, 0, 0.9);
     margin-bottom: 15px;
     padding: 7px 15px;
     -webkit-border-radius: 2px;
@@ -1169,14 +1169,14 @@ figure.highlight td {
 figure.highlight .gutter {
     color: #999;
     padding-right: 15px;
-    border-right: 1px solid rgba(0, 0, 0, 0.24);
+    border-right: 1px solid rgba(0, 0, 0, 0.886);
     text-align: right;
     vertical-align: middle;
 }
 
 figure.highlight .code {
     padding-left: 15px;
-    border-left: 1px solid rgba(0, 0, 0, 0.24);
+    border-left: 1px solid rgba(0, 0, 0, 0.855);
 }
 
 figure.highlight pre {
@@ -1331,7 +1331,7 @@ article.format-quote .entry-content blockquote {
 	font-size: 1.071428571rem;
 	line-height: 1.6;
 	font-style: normal;
-	color: #6a6a6a;
+	color: #000000;
 	background: #efefef;
 }
 
@@ -1720,7 +1720,7 @@ img#wpstats {
 	}
 	.main-navigation li a {
 		border-bottom: 0;
-		color: #6a6a6a;
+		color: #020202;
 		line-height: 3.692307692;
 		text-transform: uppercase;
 		white-space: nowrap;

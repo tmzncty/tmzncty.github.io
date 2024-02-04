@@ -97,7 +97,7 @@ http://blog.typekit.com/2011/11/09/type-study-sizing-the-legible-letter/
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 105%;
+    font-size: 102%;
     vertical-align: baseline; 
 }
 
@@ -615,7 +615,7 @@ a:hover {
 
 /* Backgroud image */
 #bg {
-	background: linear-gradient(rgba(171, 171, 171, 0.402), rgba(171, 171, 171, 0.4)), url("images/body.jpg");
+	background: linear-gradient(rgba(171, 171, 171, 0.402), rgba(171, 171, 171, 0.4)), url("https://s11.ax1x.com/2024/02/04/pFlBpqJ.jpg");
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-position: center;

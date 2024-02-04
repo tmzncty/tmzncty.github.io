@@ -705,10 +705,10 @@ a:hover {
 	line-height: 1.42857143;
 }
 .main-navigation a {
-	color: #5e5e5e;
+	color: #060606;
 }
 .main-navigation a:hover {
-	color: #21759b;
+	color: #112128;
 }
 .main-navigation ul.nav-menu,
 .main-navigation div.nav-menu > ul {
@@ -790,7 +790,7 @@ footer[role="contentinfo"] a {
 	color: #686868;
 }
 footer[role="contentinfo"] a:hover {
-	color: #21759b;
+	color: #16313d;
 }
 
 /* Category and tags */

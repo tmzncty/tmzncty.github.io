@@ -22,15 +22,15 @@
   
   <title>hexo写作必要代码 | 雪花落下的地方</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为了防止忘记，所以先用一篇文章写下来 建立文章1  hexo new &#x27;no title&#x27; 清理1hexo clean 构建1hexo g 启动本地服务1hexo s 上传到github1hexo d 图床路过图床 空格1&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; 未完待续，遇到再加">
+  <meta name="description" content="为了防止忘记，所以先用一篇文章写下来 建立文章1  hexo new &#x27;no title&#x27; 清理1hexo clean 构建1hexo g 启动本地服务1hexo s 上传到github1hexo d 图床路过图床 空格1&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; 引用在HTML中表示引用，可以使用&lt;blockquote&gt;标签用">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo写作必要代码">
 <meta property="og:url" content="https://tmzncty.github.io/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/index.html">
 <meta property="og:site_name" content="雪花落下的地方">
-<meta property="og:description" content="为了防止忘记，所以先用一篇文章写下来 建立文章1  hexo new &#x27;no title&#x27; 清理1hexo clean 构建1hexo g 启动本地服务1hexo s 上传到github1hexo d 图床路过图床 空格1&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; 未完待续，遇到再加">
+<meta property="og:description" content="为了防止忘记，所以先用一篇文章写下来 建立文章1  hexo new &#x27;no title&#x27; 清理1hexo clean 构建1hexo g 启动本地服务1hexo s 上传到github1hexo d 图床路过图床 空格1&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp; 引用在HTML中表示引用，可以使用&lt;blockquote&gt;标签用">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-02-04T07:28:24.000Z">
-<meta property="article:modified_time" content="2024-02-04T14:13:13.846Z">
+<meta property="article:modified_time" content="2024-02-15T11:54:22.731Z">
 <meta property="article:author" content="雪花">
 <meta property="article:tag" content="写作">
 <meta name="twitter:card" content="summary">
@@ -91,7 +91,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/" data-id="clslru3680002ksfo1dp53j2h" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/" data-id="clsomagav0002u4foh52b10hr" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -105,7 +105,18 @@
 <h1 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
 <h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p><a target="_blank" rel="noopener" href="https://imgse.com/">路过图床</a></p>
 <h1 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;</span><br></pre></td></tr></table></figure>
-<p>未完待续，遇到再加</p>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>在HTML中表示引用，可以使用<code>&lt;blockquote&gt;</code>标签用于长引用，而<code>&lt;q&gt;</code>标签用于短引用。对于参考文献或脚注，HTML并没有特定的标签来直接实现，但你可以通过结合使用锚点（<code>&lt;a&gt;</code>标签）和<code>&lt;sup&gt;</code>标签（上标）来手动创建脚注系统。</p>
+<h3 id="长引用"><a href="#长引用" class="headerlink" title="长引用"></a>长引用</h3><p>如果你想引用一个较长的文本块，可以使用<code>&lt;blockquote&gt;</code>标签。这通常用于引用多行文本或段落。<code>&lt;blockquote&gt;</code>标签支持<code>cite</code>属性，用于指定引用的来源URL，但该属性不会显示为文本内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">cite</span>=<span class="string">&quot;http://example.com&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一段引用的文本。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="短引用"><a href="#短引用" class="headerlink" title="短引用"></a>短引用</h3><p>对于文本中的短引用，可以使用<code>&lt;q&gt;</code>标签。<code>&lt;q&gt;</code>标签通常用于引用短句或词组，并且浏览器会为其自动添加开头和结尾的引号。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>正如某人所说：<span class="tag">&lt;<span class="name">q</span>&gt;</span>这是一段短引用的文本。<span class="tag">&lt;/<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="脚注和参考文献"><a href="#脚注和参考文献" class="headerlink" title="脚注和参考文献"></a>脚注和参考文献</h3><p>对于脚注和参考文献，你可以通过创建一个带有锚点的参考文献列表，并在文本中通过超链接引用这些锚点，来模拟脚注的功能。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一段文本，引用了某个来源<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#footnote1&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 参考文献列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;footnote1&quot;</span>&gt;</span>参考文献1的详细信息，例如：作者。《书名》。出版社，出版年份。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 更多参考文献 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，<code>&lt;sup&gt;</code>标签用于将引用编号置于上标，以模拟脚注的外观。<code>&lt;a&gt;</code>标签创建了一个到文档内部锚点（例如，<code>#footnote1</code>）的链接，该锚点对应于参考文献列表中的条目。这样，读者可以点击编号直接跳转到参考文献的详细信息。</p>
+<p>请注意，这只是模拟脚注和参考文献的一种简单方法。根据你的具体需求，可能还需要进一步的样式定制和脚本支持来实现更复杂的功能。<br>未完待续，遇到再加</p>
 
       
     </div><!-- .entry-content -->

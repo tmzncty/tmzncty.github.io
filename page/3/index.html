@@ -64,6 +64,137 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-一种连接IB和ET的方式-ROCE" class="post-一种连接IB和ET的方式-ROCE post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2024/02/08/%E4%B8%80%E7%A7%8D%E8%BF%9E%E6%8E%A5IB%E5%92%8CET%E7%9A%84%E6%96%B9%E5%BC%8F-ROCE/">一种连接IB和ET的方式-ROCE</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/08/%E4%B8%80%E7%A7%8D%E8%BF%9E%E6%8E%A5IB%E5%92%8CET%E7%9A%84%E6%96%B9%E5%BC%8F-ROCE/" data-id="cm6wl6vfi0006a0fo0mlwcs05" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><p><del>这部分是GPT写的</del></p>
+<h2 id="IB"><a href="#IB" class="headerlink" title="IB"></a>IB</h2><p>&ensp;&ensp;&ensp;&ensp;InfiniBand (IB)：想象你的电脑或游戏设备之间有一个超级高速公路，InfiniBand就是这样的一种技术。它被设计来连接超级计算机和数据中心里的服务器，使它们可以非常快速地交换数据。就像是让数据以极高的速度旅行，减少了等待的时间，特别适合那些需要处理大量数据的场合。</p>
+<h2 id="ET"><a href="#ET" class="headerlink" title="ET"></a>ET</h2><p>&ensp;&ensp;&ensp;&ensp;Ethernet (ET)：这是最常见的网络技术，几乎每台联网的电脑和设备都在使用。你可以把它想象成互联网的基础街道系统，它连接着世界上的计算机、手机和其他设备，让它们可以互相通信。Ethernet技术随着时间的发展不断进步，速度越来越快，但它仍然是最广泛使用的标准之一。</p>
+<h2 id="ROCE"><a href="#ROCE" class="headerlink" title="ROCE"></a>ROCE</h2><p>&ensp;&ensp;&ensp;&ensp;RDMA over Converged Ethernet (RoCE)：RoCE是一种特殊技术，它基于Ethernet但加入了一些特殊的魔法。RDMA代表远程直接内存访问，这意味着一台计算机可以直接读写另一台计算机的内存，而不需要通过传统的方式，大大加快了数据传输速度。RoCE就像是在普通的街道（Ethernet）上开辟了一个可以直线加速的快车道，让数据更快地到达目的地，非常适合需要快速数据传输的场景。</p>
+<h2 id="综述"><a href="#综述" class="headerlink" title="综述"></a>综述</h2><p>&ensp;&ensp;&ensp;&ensp;简单来说，InfiniBand是高速公路，Ethernet是基础街道系统，而RoCE则是在这些街道上加速的快车道。每种技术都有其适用场景，一起构成了我们通信网络的重要部分。</p>
+<h1 id="IB和ET混合组网可能的实现方式"><a href="#IB和ET混合组网可能的实现方式" class="headerlink" title="IB和ET混合组网可能的实现方式"></a>IB和ET混合组网可能的实现方式</h1><h2 id="IB单独-ET单独"><a href="#IB单独-ET单独" class="headerlink" title="IB单独 ET单独"></a>IB单独 ET单独</h2><p>&ensp;&ensp;&ensp;&ensp;相对于就是一台机子两张网卡接入，一张是ET的网卡，一张是IB的网卡。这样的话就可以实现混合使用了。通过终端混合的方式开展工作。</p>
+<h2 id="ROCE-1"><a href="#ROCE-1" class="headerlink" title="ROCE"></a>ROCE</h2><p>&ensp;&ensp;&ensp;&ensp;下面是GPT说的。<br>&ensp;&ensp;&ensp;&ensp;<br>User<br>&ensp;&ensp;&ensp;&ensp;我的ETH和IB设备之间用什么进行连接？<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;要在Ethernet和InfiniBand (IB) 设备之间建立连接，你通常需要使用支持RoCE（RDMA over Converged Ethernet）的网络适配器和交换机。RoCE技术允许你在现有的Ethernet基础设施上实现RDMA通信，无需更换为专用的InfiniBand硬件。因此，你的Ethernet设备和新购置的支持RoCE的IB网卡和交换机可以通过标准的Ethernet连接进行互联，实现数据中心的高性能网络通信。这样，你可以在不完全替换现有网络基础设施的情况下，逐步引入IB技术的优势。</p>
+<p>User<br>&ensp;&ensp;&ensp;&ensp;谢谢你，所以我需要购买支持ROCE的交换机和网卡，然后就可以直接连接，配置好IP就可以使用了对吧<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;是的，你理解得正确。为了在你的网络中集成Ethernet和InfiniBand设备，你需要购买支持RoCE的交换机和网卡。这样的设备可以让你在现有的Ethernet基础设施上利用RDMA技术的优势，从而提高数据传输效率和降低延迟。配置完成后，确保正确设置IP地址，你的系统就可以开始利用这两种技术的结合了。购买时，请注意选择与你现有设备兼容并符合你性能需求的产品。</p>
+<p>User<br>&ensp;&ensp;&ensp;&ensp;ROCE需要交换机和网卡都支持对吧，然后需要某些开启的操作吗？<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;是的，RoCE（RDMA over Converged Ethernet）技术要求交换机和网卡都必须支持RoCE。通常，在使用RoCE技术之前，需要在网卡和交换机上进行一些配置，比如开启RoCE模式、配置优先级流控（PFC）、确保网络带宽和延迟满足需求等。具体的配置步骤可能因硬件制造商而异，所以建议参考你的设备制造商提供的文档进行详细配置。</p>
+<p>User<br>&ensp;&ensp;&ensp;&ensp;那样的话，我有ROCE交换机但是在ETH模式，接着用支持ROCE的IB卡连接到交换机，配置好IB卡的IP后，可以上网吗？<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;如果你的交换机支持RoCE但当前运行在Ethernet模式下，并且你使用的是支持RoCE的IB网卡，那么理论上，只要交换机和网卡都被正确配置以支持RoCE协议，你就可以利用这种设置进行高效的数据传输。配置好IB卡的IP后，确保网络设置正确（如VLAN配置、IP路由等），你的设备应该能够访问网络。然而，实际应用中是否”可以上网”还取决于你的网络架构、配置细节以及所需的网络服务。</p>
+<p>User<br>&ensp;&ensp;&ensp;&ensp;那样的话我把一张ETH的网卡和IB的网卡用线缆连接他们可以通过ROCE互相通讯吗？<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;直接将一张Ethernet网卡和一张支持RoCE的InfiniBand网卡通过线缆直接连接并尝试通过RoCE进行通信，通常是不可行的。RoCE（RDMA over Converged Ethernet）技术是设计用于在支持RoCE的Ethernet网络上运行的，这意味着两端的设备（包括网卡和交换机）都需要支持RoCE协议。如果你的目标是在两台机器之间通过RoCE进行通信，那么两台机器上的网卡都需要支持RoCE，且网络配置需要正确设置以支持RDMA操作。直接连接两种不同类型的网卡不符合RoCE技术的设计和使用场景。</p>
+<p>User<br>&ensp;&ensp;&ensp;&ensp;两台机器的网卡是都支持ROCE的，然后我需要怎么进行配置呢，是WINSERVER系统<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;在Windows Server系统中配置支持RoCE的网卡进行通信，你需要按照以下大致步骤操作：</p>
+<ol>
+<li>确保网卡驱动已更新：安装最新的驱动程序以确保网卡支持RoCE。</li>
+<li>启用RoCE：通过网卡配置工具或Windows PowerShell命令启用RoCE功能。</li>
+<li>配置网络参数：根据网络环境配置IP地址、子网掩码等参数。</li>
+<li>开启优先级流控制（PFC）：PFC对于RoCE通信至关重要，需要在网卡和交换机上进行配置。</li>
+<li>调整队列深度和其他高级设置：这些设置可以进一步优化RoCE通信性能。<br>&ensp;&ensp;&ensp;&ensp;具体配置方法可能因网卡型号和Windows Server版本而异，建议参考网卡制造商提供的详细指南和官方文档进行配置。</li>
+</ol>
+<p>User<br>&ensp;&ensp;&ensp;&ensp;PFC在网卡上面怎么开启呢？比如说CX5系列的网卡<br>ChatGPT<br>&ensp;&ensp;&ensp;&ensp;开启PFC（Priority Flow Control）通常需要通过网卡的配置工具或命令行界面来完成。对于Mellanox（NVIDIA）的ConnectX-5系列网卡，你可以使用Mellanox的MFT（Mellanox Firmware Tools）或其他相关工具进行配置。具体步骤包括检查网卡当前的配置状态、启用PFC以及配置相关的优先级和策略。由于操作可能涉及到固件级别的调整，强烈建议遵循Mellanox提供的官方文档或联系技术支持以获得详细指导和帮助。<br>&ensp;&ensp;&ensp;&ensp;理论上来说，是可行的。实际上还没有测试，等待后续更新。</p>
+<h1 id="连接方式"><a href="#连接方式" class="headerlink" title="连接方式"></a>连接方式</h1><p>&ensp;&ensp;&ensp;&ensp;根据群友的说法，可以直接用mellanox mcp1600-e003e26 ib edr缆连接，ET也可以，也就是不挑选线。<br><a target="_blank" rel="noopener" href="https://store.nvidia.com/en-us/networking/store/product/mcp1600-e003e26/nvidia-dac-cable-ib-edr-up-to-100gb-s-qsfp28-3m/">https://store.nvidia.com/en-us/networking/store/product/mcp1600-e003e26/nvidia-dac-cable-ib-edr-up-to-100gb-s-qsfp28-3m/</a><br><a target="_blank" rel="noopener" href="https://network.nvidia.com/related-docs/prod_cables/PB_MCP1600-E0xxEyy_100Gbps_QSFP28_DAC.pdf">https://network.nvidia.com/related-docs/prod_cables/PB_MCP1600-E0xxEyy_100Gbps_QSFP28_DAC.pdf</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2024/02/08/%E4%B8%80%E7%A7%8D%E8%BF%9E%E6%8E%A5IB%E5%92%8CET%E7%9A%84%E6%96%B9%E5%BC%8F-ROCE/">
+    <time datetime="2024-02-08T10:58:22.000Z" class="entry-date">
+        2024-02-08
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE/" rel="tag">基础设施建设</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-理解" class="post-理解 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2024/02/08/%E7%90%86%E8%A7%A3/">理解</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/08/%E7%90%86%E8%A7%A3/" data-id="cm6wl6vft0018a0fodp6q7o55" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>&ensp;&ensp;&ensp;&ensp;理解可能是最难用语言论证的一个词。因为这会触发循环问题。语言是无法完全说明语言的。就像人不能自己踩着自己上天一样。我们每天都在进行这个过程，但是可能从来没有留意过具体的方式或者说内部的机理。就怎么说呢，日常活着的时候，反问一下一些概念，就会发现基本无解。</p>
+<h1 id="没有理解"><a href="#没有理解" class="headerlink" title="没有理解"></a>没有理解</h1><p>&ensp;&ensp;&ensp;&ensp;没有理解就是没有理解啊，但是怎么知道没有理解？同样的，很经典的故事，庄子与惠子游于濠梁之上。惠子到底懂不懂庄子呢，庄子到底是不是诡辩呢？每个人都不知道其他人脑子里面想的是什么，同时每个人也很想知道对方脑子里面想的是什么。在《三体》中也有很细致的描写，这里表过不提。所以，我们会发现这里还有个概念，“懂”。但是“懂”并不好懂也并不好论，在此先跳过这个词，并且把它的意思和理解等同。（关于意思之类我不知道我能不能论证，但是只能先这样玩。）那么，我们为什么还是会说没有理解呢？多半是没有反应，这里就要涉及到言语行为理论。下面是GPT说的。（这里还有一个名词叫做述行理论，是等同的。）</p>
+<blockquote>
+    <p>言语行为理论（Speech Act Theory）是20世纪中叶由英国哲学家约翰·奥斯汀（J.L. Austin）首先提出，并由他的学生约翰·塞尔（John Searle）进一步发展的一种语言哲学理论。该理论主要关注语言的使用及其执行行为的功能，强调语言不仅仅是用来陈述事实或传递信息的工具，还能用来执行行动。
+
+<p>言语行为理论基本上可以分为三个层次：</p>
+<ol>
+<li><p><strong>言辞行为（Locutionary Act）</strong>：指说出某个句子的行为，包括其语音、语法结构和词义，即形成可理解语句的行为。</p>
+</li>
+<li><p><strong>言外行为（Illocutionary Act）</strong>：指说话者通过言辞行为意图达成的行为，例如请求、命令、承诺、声明等。这个层面的行为是言语行为理论的核心，关注的是说话者的意图和语言的社会功能。</p>
+</li>
+<li><p><strong>言后行为（Perlocutionary Act）</strong>：指言辞行为对听话者产生的影响，如说服、激励、吓唬等。这涉及到言语如何影响听者的行为或态度。</p>
+</li>
+</ol>
+<p>言语行为理论的重要贡献在于它扩展了我们对语言功能的理解，不仅仅看作是一种符号系统用于描述世界，更是一种行为工具，用于在社会互动中实现特定的目的和效果。通过这一理论，我们能更深入地理解语言在日常交流中的实际作用，及其在构建社会现实中的角色。</p></p>
+</blockquote>
+
+<p>&ensp;&ensp;&ensp;&ensp;这个理论我不想细说，直接利用他来解释我们的标题，没有理解。思维是不可知的，那么就只能通过行为来判断思维。进而才能出现没有理解这种状态。 <strong>在这里我需要特别强调一个点，不能完全依赖这些进行判断一个人。</strong>我这里说状态也只能是一个概括，毕竟是多种行为的共同表现，大家都不是盲人摸象，不是一次看一个人的耳朵，下一次看脸。但是这就带来了一个很严重的问题，无法判断他人是否理解，也无法知道自己是否理解。那么理解还有那么重要吗？或者有必要进一步分析下去吗？</p>
+<h1 id="理解了但是似乎就是理解"><a href="#理解了但是似乎就是理解" class="headerlink" title="理解了但是似乎就是理解"></a>理解了但是似乎就是理解</h1><p>&ensp;&ensp;&ensp;&ensp;这就涉及到一个理解的重要性和理解的程度的问题。我很粗浅的观点视为信息传递的完成程度。但是这也不完整或者说有漏洞。因为根本不知道什么才叫完成，这一切似乎都回到了原点。没有人在一个雨中浮萍上面继续论证。空中楼阁是做不出来的，无根之木无源之水也是不可能的。那我为什么还要继续说呢？因为语言可以让我们在有限的范围内继续进行论证，在一个用语言构造的结界中继续我们的游戏。在日常语境中，或者在对话中，我们的理解很多时候是为了让对方有所反应，也就是刚刚的行为。或者在阅读过程中，是可以复述乃至转述相关内容。至于运用，或者输出，可能是另一层的问题。相对于一个知行统一律或者内化外化律的问题。但是问题在于很多时候压根说不清楚要到什么程度，或者仅仅是为了说出对方希望我们说出的话语。这就非常奇怪了，理解变成了行为，脱离了语言，变成了动作。那样的话我们的理解何从谈起？难道在有限的语言中还是无法说清楚吗？<br>&ensp;&ensp;&ensp;&ensp;似乎是的，我们已经到达了语言的边界，只能使用类似论道的方式把理解的外形展现出来，无法完全说清楚它。这部分可以说已经到达了道的范畴，大家都知道，但是大家都无法用语言说清楚。可是如果我就是不信邪呢？就是要强行论证呢？</p>
+<h1 id="我不理解，谁理解？"><a href="#我不理解，谁理解？" class="headerlink" title="我不理解，谁理解？"></a>我不理解，谁理解？</h1><p>&ensp;&ensp;&ensp;&ensp;我尽可能的谨慎说明这些，因为论证这种抽象的事物很容易陷入到循环之中。先从一个人开始，即使语言是为了对话准备的，是双方非说不可情况下产生的。但最终是语言转化为非语言的过程或者说完成这个过程。在这里我想提一下我自己对于记忆或者思维之类的观点。语言是很高层的东西，是最终的输出手段，其底层的非语言成分无法完全用语言言说。一旦试图言说很容易陷进刚刚的循环中。并且，现有科学也无法完全解释这些情况。在“表达”那篇文章中，我用认知去说明表达这个概念。那么这次继续回到认知当中。马克思主义告诉我们世界是可知的，但是并没有说怎么样的可知或者说啥时候会完全的可知。就很神奇对吧，只说可知，不说何为可知。（即使是说了，那就是上课没讲，毕竟认知本身也讲不清楚。）但是认知的一个很简单的方式就是用语言向他人言说，命名并且描述。就比如说我们遇到水，向他人说，这里有水。然后又用流动的，透明无色无味的，来说明这个是水。在化学中，用更精细的H2O来描述。同时我们还可以知道水的性质，水的状态这些信息。根据这个例子我们会发现，认知或者说认识事物的过程其实是不断的用语言描述事物的过程，也就是不断的把事物转化为语言的一部分的过程。这就和语言演变扯上关系了。新词的出现其中的一个原因是新事物的出现，也就是对新事物的描述带来的新词的出现。也就是认知的变化或者说增加。我不好说怎么样才叫增加，难道是认知的东西多吗？那么怎么确认呢？我怎么知道我认识什么？可能我大概知道我记得什么，但是我不知道我认识什么。又回到苏格拉底那句话：<strong>我知道的就是我不知道。</strong><br>&ensp;&ensp;&ensp;&ensp;这样的话我们就知道认知是什么，进而可以继续论证语言和非语言了。但是我这里要继续强调一个方面<strong>语言依旧是局限的，但是思维有时候是可以短暂突破语言边界的。非语言比语言更多且更广。</strong>说白了，语言是不得已为之，非语言是既有的系统。在没有语言的早期，人类也照样生存，其他动物也照样生存，似乎有和没有问题不大。包括现在是否掌握语言也是人和动物的区别之一。我们很难想象没有语言怎么活下去对吧，似乎没有语言真的活不下去。某朝某代还真的有西洋皇帝做过实验，鬼知道是真的还是假的，反正是那个意思。所以，我们逐渐的被语言控制，也控制了语言。但是不要忽略最初的生存之本，那些非语言的成分正在支撑着我们语言的输入与输出。比如说正在看这段文字的你，是不是默默的读出了这些内容，并且尝试着思考这些字词的含义。甚至可以对外说我看了这篇文章，我现在似乎知道了什么。这一切语言能力的支撑，正是来自于脑中非语言的成分。【这里的语言能力和语言行为不是对等的，我知道乔姆斯基有这个观点，但是我想说的就是语言的能力，也就是能不能使用语言。】这些非语言的成分平时感觉不到，有特定的脑区，什么布洛卡区和韦尼克区。其实我不想多说什么生理的，语言学概论的东西，没必要。直接继续我们的论证。<br>&ensp;&ensp;&ensp;&ensp;非语言的成分转化为语言的成分进而可以输出，然后听到或看到的语言，也可以转化为非语言的成分进行输入形成记忆的一部分。听起来很简单吧。似乎理解就是一个转化的过程。为什么我们理解后才能说话呢？为什么我们有时候把理解当记忆呢？为什么我们说有时候学不进脑子呢？似乎都可以这样进行解释。因为真正的脑子才不是平时说的语言那么简单，你根本不了解你自己。非常可笑对吧，但事实上就是如此。人啊，太复杂了。理解，也太复杂。其实我这边用非语言的成分概括性的暂时解决了这个问题，不是永久性的解决。就怎么说呢，进入这个成分的不只是语言，还有人体的各种感觉。就比如说你还记得当年闻的气味，听的歌，摸到电门会痛。各种各样的都有，也都可能被记录。这里表过不提吧，多的留待后世继续论证。<br>&ensp;&ensp;&ensp;&ensp;就这样，我们似乎理解了理解，但是根本没有理解了理解，我强行用一个概念把道理说通了而已。除非不用语言，否则永远无法说明。<br>&ensp;&ensp;&ensp;&ensp;<strong>人们总是被自己创造的工具囚禁，语言是无法逃离的牢笼。</strong></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2024/02/08/%E7%90%86%E8%A7%A3/">
+    <time datetime="2024-02-08T10:55:13.000Z" class="entry-date">
+        2024-02-08
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-表达" class="post-表达 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -79,7 +210,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/07/%E8%A1%A8%E8%BE%BE/" data-id="cm62eit74001f2sfo2fpxcy3x" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/07/%E8%A1%A8%E8%BE%BE/" data-id="cm6wl6vfx001ha0fo1ws24rhn" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -135,7 +266,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/%E6%AD%A7%E4%B9%89/" data-id="cm62eit6u000o2sfo5mro1imw" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/%E6%AD%A7%E4%B9%89/" data-id="cm6wl6vfq000ta0fo0yxj480i" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -191,7 +322,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E5%A5%BD%E4%B9%A6/" data-id="cm62eit6t000l2sfo3jbke6ox" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/%E6%89%BE%E4%B8%8D%E5%88%B0%E7%9A%84%E5%A5%BD%E4%B9%A6/" data-id="cm6wl6vfo000ma0fo07aies9s" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -255,7 +386,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/" data-id="cm62eit6k00042sfocc195r02" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/" data-id="cm6wl6vfg0004a0fo9en7518t" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -320,7 +451,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/test1/" data-id="cm62eit6l00052sfo8wbh0jnt" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/test1/" data-id="cm6wl6vfh0005a0foaok6bsnx" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -363,7 +494,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/archives.html" data-id="cm62eit6g00012sfogxm2f3c4" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/archives.html" data-id="cm6wl6vf70000a0fobum59c2k" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -405,7 +536,7 @@
         
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hello-world/" data-id="cm62eit6j00032sfo8t6n5jud" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hello-world/" data-id="cm6wl6vfe0002a0foh45tacwp" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -460,6 +591,14 @@
       <ul>
         
           <li>
+            <a href="/2025/02/09/%E6%97%A0%E9%A2%98-2/">无题-2</a>
+          </li>
+        
+          <li>
+            <a href="/2025/02/09/%E6%97%A0%E9%A2%98-1/">无题-1</a>
+          </li>
+        
+          <li>
             <a href="/2025/01/19/%E4%BF%AE%E5%A5%BD%E7%9A%84%E7%8C%AB%E5%A8%98/">修好的猫娘</a>
           </li>
         
@@ -471,14 +610,6 @@
             <a href="/2024/11/17/%E6%B2%A1%E6%9C%89%E6%AD%BB%E4%B9%9F%E6%B2%A1%E6%9C%89%E6%B4%BB%E7%9D%80/">没有死也没有活着</a>
           </li>
         
-          <li>
-            <a href="/2024/11/12/%E5%9C%A8%E4%BA%BA%E9%97%B4/">在人间</a>
-          </li>
-        
-          <li>
-            <a href="/2024/06/14/%E5%9C%A8%E8%AF%AD%E8%A8%80%E7%9A%84%E8%BE%B9%E7%95%8C%E8%BF%9B%E8%A1%8C%E4%B9%A6%E5%86%99-1/">在语言的边界进行书写-1</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -488,7 +619,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6/" rel="tag">书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a><span class="tag-list-count">15</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE/" rel="tag">基础设施建设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E5%93%B2%E5%AD%A6%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果哲学是一群猫</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E8%AF%AD%E8%A8%80%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果语言是一群猫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82/" rel="tag">杂</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6/" rel="tag">书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a><span class="tag-list-count">17</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE/" rel="tag">基础设施建设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E5%93%B2%E5%AD%A6%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果哲学是一群猫</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E8%AF%AD%E8%A8%80%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果语言是一群猫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82/" rel="tag">杂</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </aside>
 

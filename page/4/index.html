@@ -64,6 +64,71 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-hexo写作必要代码" class="post-hexo写作必要代码 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/">hexo写作必要代码</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="https://tmzncty.github.io/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/" data-id="cm9csn5rx0003t4fo0oaeds1r" class="leave-reply bdsharebuttonbox" data-cmd="more"></a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p><font size=5>为了防止忘记，所以先用一篇文章写下来</font></p>
+<h1 id="建立文章"><a href="#建立文章" class="headerlink" title="建立文章"></a>建立文章</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  hexo new &#x27;no title&#x27;</span><br></pre></td></tr></table></figure>
+<h1 id="清理"><a href="#清理" class="headerlink" title="清理"></a>清理</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure>
+<h1 id="构建"><a href="#构建" class="headerlink" title="构建"></a>构建</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
+<h1 id="启动本地服务"><a href="#启动本地服务" class="headerlink" title="启动本地服务"></a>启动本地服务</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<h1 id="上传到github"><a href="#上传到github" class="headerlink" title="上传到github"></a>上传到github</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><p><del><a target="_blank" rel="noopener" href="https://imgse.com/">路过图床</a></del></p>
+<h1 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;</span><br></pre></td></tr></table></figure>
+<h1 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h1><p>在HTML中表示引用，可以使用<code>&lt;blockquote&gt;</code>标签用于长引用，而<code>&lt;q&gt;</code>标签用于短引用。对于参考文献或脚注，HTML并没有特定的标签来直接实现，但你可以通过结合使用锚点（<code>&lt;a&gt;</code>标签）和<code>&lt;sup&gt;</code>标签（上标）来手动创建脚注系统。</p>
+<h3 id="长引用"><a href="#长引用" class="headerlink" title="长引用"></a>长引用</h3><p>如果你想引用一个较长的文本块，可以使用<code>&lt;blockquote&gt;</code>标签。这通常用于引用多行文本或段落。<code>&lt;blockquote&gt;</code>标签支持<code>cite</code>属性，用于指定引用的来源URL，但该属性不会显示为文本内容。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">blockquote</span> <span class="attr">cite</span>=<span class="string">&quot;http://example.com&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一段引用的文本。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">blockquote</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="短引用"><a href="#短引用" class="headerlink" title="短引用"></a>短引用</h3><p>对于文本中的短引用，可以使用<code>&lt;q&gt;</code>标签。<code>&lt;q&gt;</code>标签通常用于引用短句或词组，并且浏览器会为其自动添加开头和结尾的引号。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>正如某人所说：<span class="tag">&lt;<span class="name">q</span>&gt;</span>这是一段短引用的文本。<span class="tag">&lt;/<span class="name">q</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="脚注和参考文献"><a href="#脚注和参考文献" class="headerlink" title="脚注和参考文献"></a>脚注和参考文献</h3><p>对于脚注和参考文献，你可以通过创建一个带有锚点的参考文献列表，并在文本中通过超链接引用这些锚点，来模拟脚注的功能。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>这是一段文本，引用了某个来源<span class="tag">&lt;<span class="name">sup</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;#footnote1&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">sup</span>&gt;</span>。<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 参考文献列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">id</span>=<span class="string">&quot;footnote1&quot;</span>&gt;</span>参考文献1的详细信息，例如：作者。《书名》。出版社，出版年份。<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- 更多参考文献 --&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个示例中，<code>&lt;sup&gt;</code>标签用于将引用编号置于上标，以模拟脚注的外观。<code>&lt;a&gt;</code>标签创建了一个到文档内部锚点（例如，<code>#footnote1</code>）的链接，该锚点对应于参考文献列表中的条目。这样，读者可以点击编号直接跳转到参考文献的详细信息。</p>
+<p>请注意，这只是模拟脚注和参考文献的一种简单方法。根据你的具体需求，可能还需要进一步的样式定制和脚本支持来实现更复杂的功能。<br>未完待续，遇到再加</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2024/02/04/hexo%E5%86%99%E4%BD%9C%E5%BF%85%E8%A6%81%E4%BB%A3%E7%A0%81/">
+    <time datetime="2024-02-04T07:28:24.000Z" class="entry-date">
+        2024-02-04
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a></li></ul>
+
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-test1" class="post-test1 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -219,6 +284,10 @@
       <ul>
         
           <li>
+            <a href="/2025/05/02/%E6%97%A0%E9%A2%98-4/">无题-4</a>
+          </li>
+        
+          <li>
             <a href="/2025/04/11/%E7%8C%AB%E5%A8%98%E8%AE%BE%E5%AE%9A/">猫娘设定</a>
           </li>
         
@@ -234,10 +303,6 @@
             <a href="/2025/02/23/%E6%97%A0%E9%A2%98-3/">无题-3</a>
           </li>
         
-          <li>
-            <a href="/2025/02/09/%E6%97%A0%E9%A2%98-2/">无题-2</a>
-          </li>
-        
       </ul>
     </div>
   </aside>
@@ -247,7 +312,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6/" rel="tag">书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a><span class="tag-list-count">21</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE/" rel="tag">基础设施建设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E5%93%B2%E5%AD%A6%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果哲学是一群猫</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E8%AF%AD%E8%A8%80%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果语言是一群猫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82/" rel="tag">杂</a><span class="tag-list-count">3</span></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%B9%A6/" rel="tag">书</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%86%99%E4%BD%9C/" rel="tag">写作</a><span class="tag-list-count">22</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%9F%BA%E7%A1%80%E8%AE%BE%E6%96%BD%E5%BB%BA%E8%AE%BE/" rel="tag">基础设施建设</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E5%93%B2%E5%AD%A6%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果哲学是一群猫</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%A6%82%E6%9E%9C%E8%AF%AD%E8%A8%80%E6%98%AF%E4%B8%80%E7%BE%A4%E7%8C%AB/" rel="tag">如果语言是一群猫</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9D%82/" rel="tag">杂</a><span class="tag-list-count">3</span></li></ul>
     </div>
   </aside>
 
